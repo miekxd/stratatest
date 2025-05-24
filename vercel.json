@@ -6,16 +6,16 @@
     "DATABASE_URL": "database.com",
     "API_KEY": "apikey123214123",
     "NODE_ENV": "production",
-    "NEXT_PUBLIC_SUPABASE_URL": "https://rhptfdayptmuiwrgqowt.supabase.co",
-    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJocHRmZGF5cHRtdWl3cmdxb3d0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgwMDAzMDIsImV4cCI6MjA2MzU3NjMwMn0.vh9We78ZPPiGMFrtYH_1tcuuZfsuk1jFpKMl2-htGb8"
+    "NEXT_PUBLIC_SUPABASE_URL": "your_supabase_url",
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "your_supabase_anon_key"
   },
   "functions": {
-    "api/**/*.php": {
+    "api/*.php": {
       "runtime": "vercel-php@0.7.3"
     }
   },
   "rewrites": [
-    { "source": "/api/(.*)\\.php", "destination": "/api/index.js" }
+    { "source": "/api/:path*.php", "destination": "/api/:path*.php" }
   ],
   "crons": [
     {
