@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "regions": ["syd1"],
+  "env": {
+    "DATABASE_URL": "database.com",
+    "API_KEY": "apikey123214123",
+    "NODE_ENV": "production"
+  },
+  "functions": {
+    "api/**/*.php": {
+      "runtime": "vercel-php@0.7.3"
+    }
+  },
+  "routes": [
+    { "src": "/api/(.*)\\.php", "dest": "/api/index.js" }
+  ],
+  "crons": [
+    {
+      "path": "/api/cron/monthly-report", 
+      "schedule": "0 0 1 * *"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/home",
+      "destination": "/dashboard", 
+      "permanent": true
+    }
+  ]
+}
